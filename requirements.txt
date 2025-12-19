@@ -1,0 +1,18 @@
+# Clean, examiner-friendly requirements for the Streamlit acne detection app (macOS/Windows/Linux)
+# Install:
+#   python -m venv .venv
+#   source .venv/bin/activate  # (macOS/Linux)  or  .venv\Scripts\activate  # (Windows)
+#   pip install -r requirements.txt
+
+streamlit>=1.30
+ultralytics>=8.0.0
+
+# Ultralytics runs on PyTorch. Pinning a minimum version improves reproducibility across machines.
+torch>=2.1
+torchvision>=0.16
+
+opencv-python>=4.8
+pillow>=10.0
+numpy>=1.24
+bcrypt>=4.0
+mysql-connector-python>=8.0

@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 13
+names: ['Acne', 'Pimples', 'acne_scars', 'blackhead', 'cystic', 'flat_wart', 'folliculitis', 'keloid', 'milium', 'papular', 'purulent', 'sebo-crystan-conglo', 'whitehead']
+
+roboflow:
+  workspace: charan-a-a-8lhwj
+  project: pimples-detection
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/charan-a-a-8lhwj/pimples-detection/dataset/4
