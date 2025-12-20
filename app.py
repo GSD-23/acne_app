@@ -374,11 +374,6 @@ def initialize_database():
             password=st.secrets["DB_PASSWORDDB_PASSWORD"],
             port=int(st.secrets["DB_PORTDB_PORT"]
                      )
-        cursor = conn.cursor()
-        cursor.execute("CREATE DATABASE IF NOT EXISTS pimples_db")
-        conn.commit()
-        cursor.close()
-        conn.close()
 
         conn = get_db_connection()
         if conn:
