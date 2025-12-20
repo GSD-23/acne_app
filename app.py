@@ -354,12 +354,12 @@ def load_custom_css():
 # Database connection function
 def get_db_connection():
     try:
-        return get_connection(
-            host=st.secrets["tramway.proxy.rlwy.net"],
-            user=st.secrets["root"],
-            password=st.secrets["HcmqZuSwagvomGVxznbWdzugxDnLhIAj"],
-            database=st.secrets["railway"],
-            port=int(st.secrets["40241"])
+        return mysql.connector.connect(
+            host=st.secrets["DB_HOST"],
+            user=st.secrets["DB_USER"],
+            password=st.secrets["DB_PASSWORD"],
+            database=st.secrets["DB_NAME"],
+            port=int(st.secrets["DB_PORT"])
         )
     except mysql.connector.Error as e:
         st.error(f"Database connection failed: {e}")
@@ -368,11 +368,11 @@ def get_db_connection():
 # Initialize database and table
 def initialize_database():
     try:
-        conn = get_connection(
-            host=st.secrets["tramway.proxy.rlwy.net"],
-            user=st.secrets["root"],
-            password=st.secrets["HcmqZuSwagvomGVxznbWdzugxDnLhIAj"],
-            port=int(st.secrets["40241"]
+        conn = mysql.connector.connect(
+            host=st.secrets["DB_HOSTDB_HOST"],
+            user=st.secrets["DB_USER"],
+            password=st.secrets["DB_PASSWORDDB_PASSWORD"],
+            port=int(st.secrets["DB_PORTDB_PORT"]
                      )
         cursor = conn.cursor()
         cursor.execute("CREATE DATABASE IF NOT EXISTS pimples_db")
