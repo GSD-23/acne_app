@@ -368,30 +368,28 @@ def get_db_connection():
 # Initialize database and table
 def initialize_database():
     try:
-        conn = mysql.connector.connect(
-            host=st.secrets["DB_HOSTDB_HOST"],
-            user=st.secrets["DB_USER"],
-            password=st.secrets["DB_PASSWORDDB_PASSWORD"],
-            port=int(st.secrets["DB_PORTDB_PORT"]
-                     )
-
         conn = get_db_connection()
-        if conn:
-            cursor = conn.cursor()
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS users (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    full_name VARCHAR(255) NOT NULL,
-                    username VARCHAR(255) NOT NULL,
-                    email VARCHAR(255) UNIQUE NOT NULL,
-                    password VARCHAR(255) NOT NULL,
-                    phone VARCHAR(20),
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                )
+        
+        if not conn:
+            return
+        
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            full_name VARCHAR(255) NOT NULL,
+            username VARCHAR(255) NOT NULL,
+            email VARCHAR(255) UNIQUE NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            phone VARCHAR(20),
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
             ''')
+        
             conn.commit()
             cursor.close()
             conn.close()
+            
     except mysql.connector.Error as e:
         st.error(f"Error initializing database: {e}")
 
