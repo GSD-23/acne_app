@@ -386,9 +386,9 @@ def initialize_database():
             )
             ''')
         
-            conn.commit()
-            cursor.close()
-            conn.close()
+        conn.commit()
+        cursor.close()
+        conn.close()
             
     except mysql.connector.Error as e:
         st.error(f"Error initializing database: {e}")
