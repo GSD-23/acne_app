@@ -963,7 +963,8 @@ def prediction():
                 return
             
             with st.spinner("🔄 Analyzing image... Please wait..."):
-                annotated_image, classes = predict_image(image)
+                pil_img = Image.fromarray(frame_rgb)
+                annotated_image, classes = predict_image(pil_img)
                 pimple_count = len(classes)
             
             if annotated_image is not None:
@@ -1026,7 +1027,7 @@ def live_detection():
     image = Image.open(img).convert("RGB")
     frame_rgb = np.array(image)
 
-    annotated_image, classes = predict_frame_rgb(frame_rgb)  # (we define this once)
+    annotated_image, classes = predict_image(Image.fromarray(frame_rgb))  # (we define this once)
     pimple_count = len(classes)
 
     st.image(annotated_image, use_container_width=True)
