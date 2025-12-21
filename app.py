@@ -1093,7 +1093,7 @@ def articles():
             </ul>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """), unsafe_allow_html=True)
     
     # Article 2
     st.markdown("""
