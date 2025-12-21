@@ -12,6 +12,7 @@ import os
 import bcrypt
 from datetime import datetime
 import textwrap
+import streamlit.components.v1 as components
 
 # Page configuration
 st.set_page_config(
@@ -1065,7 +1066,8 @@ def articles():
     """, unsafe_allow_html=True)
     
     # Article 1
-    st.markdown(textwrap.dedent("""
+    components.html(
+        textwrap.dedent("""\
     <div class="article-card">
         <div class="article-title">🧴 Building an Effective Skincare Routine for Acne-Prone Skin</div>
         <div class="article-content">
@@ -1093,7 +1095,10 @@ def articles():
             </ul>
         </div>
     </div>
-    """), unsafe_allow_html=True)
+    """),
+        height=520,
+        scrolling=True,
+        )
     
     # Article 2
     st.markdown("""
