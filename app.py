@@ -1038,12 +1038,17 @@ def live_detection():
             <h3>🔍 Detected: {pimple_count} lesion(s)</h3>
         </div>
         """, unsafe_allow_html=True)
+
+        st.success(f"✅ Analysis Complete: {pimple_count} acne lesion(s) detected") display_severity_analysis(pimple_count)
+
     else:
         detection_info.markdown("""
         <div class="feature-card" style="text-align: center;">
             <h3>✨ No lesions detected</h3>
         </div>
         """, unsafe_allow_html=True)
+        
+        st.info("✨ No acne lesions detected! Your skin looks clear.")
 
     
 # Articles page
