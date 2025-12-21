@@ -1,4 +1,6 @@
+import av
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 import mysql.connector
 from ultralytics import YOLO
 import cv2
@@ -1009,53 +1011,40 @@ def live_detection():
     """, unsafe_allow_html=True)
     
     run = st.checkbox("▶️ Start Webcam")
-    FRAME_WINDOW = st.empty()
     detection_info = st.empty()
-    
-    if run:
-        try:
-            camera = cv2.VideoCapture(0)
-            if not camera.isOpened():
-                st.error("❌ Failed to access webcam. Ensure it's connected and not in use.")
-                return
-            
-            while run:
-                ret, frame = camera.read()
-                if not ret:
-                    st.error("❌ Failed to capture frame.")
-                    break
-                    
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                annotated_frame, classes = predict_image(frame)
-                
-                if annotated_frame is not None:
-                    FRAME_WINDOW.image(annotated_frame, use_container_width=True)
-                    pimple_count = len(classes)
-                    
-                    if pimple_count > 0:
-                        detection_info.markdown(f"""
-                        <div class="feature-card" style="text-align: center;">
-                            <h3>🔍 Current Frame: {pimple_count} lesion(s) detected</h3>
-                        </div>
-                        """, unsafe_allow_html=True)
-                    else:
-                        detection_info.markdown("""
-                        <div class="feature-card" style="text-align: center;">
-                            <h3>✨ No lesions detected in current frame</h3>
-                        </div>
-                        """, unsafe_allow_html=True)
-                
-                import time
-                time.sleep(0.1)
-                
-        except Exception as e:
-            st.error(f"❌ Error: {e}")
-        finally:
-            if 'camera' in locals():
-                camera.release()
-    else:
-        st.info("📷 Webcam stopped. Check the box above to start.")
 
+    img = st.camera_input("📷 Capture image")
+
+    if img is None:
+        st.info("Click **Take Photo** to capture a frame for detection.")
+        return
+
+    # Convert the captured image to RGB numpy array
+    from PIL import Image
+    import numpy as np
+
+    image = Image.open(img).convert("RGB")
+    frame_rgb = np.array(image)
+
+    annotated_image, classes = predict_frame_rgb(frame_rgb)  # (we define this once)
+    pimple_count = len(classes)
+
+    st.image(annotated_image, use_container_width=True)
+
+    if pimple_count > 0:
+        detection_info.markdown(f"""
+        <div class="feature-card" style="text-align: center;">
+            <h3>🔍 Detected: {pimple_count} lesion(s)</h3>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        detection_info.markdown("""
+        <div class="feature-card" style="text-align: center;">
+            <h3>✨ No lesions detected</h3>
+        </div>
+        """, unsafe_allow_html=True)
+
+    
 # Articles page
 def articles():
     st.markdown('<div class="banner"><h1>📚 Skincare & Lifestyle Articles</h1></div>', unsafe_allow_html=True)
