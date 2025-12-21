@@ -11,6 +11,7 @@ import io
 import os
 import bcrypt
 from datetime import datetime
+import textwrap
 
 # Page configuration
 st.set_page_config(
@@ -1064,7 +1065,7 @@ def articles():
     """, unsafe_allow_html=True)
     
     # Article 1
-    st.markdown("""
+    st.markdown(textwrap.dedent("""
     <div class="article-card">
         <div class="article-title">🧴 Building an Effective Skincare Routine for Acne-Prone Skin</div>
         <div class="article-content">
