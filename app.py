@@ -759,14 +759,14 @@ def home():
 
 # About page
 def about():
-    st.markdown('<div class="banner"><h1>ℹ️ About Our Project</h1></div>', unsafe_allow_html=True)
+    st.markdown('<div class="banner"><h1>ℹ️ Project Overview</h1></div>', unsafe_allow_html=True)
     
     st.markdown("""
     <div class="article-card">
-        <div class="article-title">🎯 Our Mission</div>
+        <div class="article-title">🎯 Mission</div>
         <div class="article-content">
-            <p>We're revolutionizing skin health monitoring by combining advanced computer vision with accessible technology. 
-            Our mission is to democratize dermatological care, making professional-grade skin analysis available to everyone, anywhere.</p>
+            <p>Revolutionizing skin health monitoring by combining advanced computer vision with accessible technology
+            in order to democratize professional-grade skin analysis available to everyone, anywhere.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -776,11 +776,10 @@ def about():
     with col1:
         st.markdown("""
         <div class="feature-card">
-            <h3>🔬 Cutting-Edge Technology</h3>
+            <h3>🔬 Technology</h3>
             <ul>
                 <li><strong>YOLOv9 Architecture:</strong> State-of-the-art deep learning model</li>
                 <li><strong>Real-Time Processing:</strong> Instant results with GPU acceleration</li>
-                <li><strong>High Precision:</strong> 85%+ accuracy in lesion detection</li>
                 <li><strong>Dual Severity Assessment:</strong> GAGS and IGA clinical scales</li>
             </ul>
         </div>
@@ -791,39 +790,12 @@ def about():
         <div class="feature-card">
             <h3>📊 Dataset & Training</h3>
             <ul>
-                <li><strong>Source:</strong> High-quality Roboflow medical dataset</li>
-                <li><strong>Images:</strong> Thousands of annotated facial images</li>
+                <li><strong>Source:</strong> Roboflow medical dataset</li>
                 <li><strong>Diversity:</strong> Multiple skin types and lighting conditions</li>
                 <li><strong>Validation:</strong> Rigorous testing with dermatological standards</li>
             </ul>
         </div>
         """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">👥 Our Team</div>
-        <div class="article-content">
-            <p>We're a dedicated group of AI researchers, dermatologists, and healthcare enthusiasts working to bridge 
-            the gap between advanced technology and accessible healthcare. Our multidisciplinary approach ensures both 
-            technical excellence and clinical relevance.</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🔮 Future Vision</div>
-        <div class="article-content">
-            <ul>
-                <li><strong>Expanded Detection:</strong> Additional skin conditions (eczema, rosacea, psoriasis)</li>
-                <li><strong>Treatment Tracking:</strong> Monitor progress over time with historical analysis</li>
-                <li><strong>Telehealth Integration:</strong> Connect directly with dermatologists</li>
-                <li><strong>Mobile Application:</strong> On-the-go skin analysis</li>
-                <li><strong>AI-Powered Predictions:</strong> Forecast treatment outcomes</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Algorithm page
 def algo():
