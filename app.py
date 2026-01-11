@@ -751,28 +751,8 @@ def home():
         <div class="article-title">🎯 Why Skin Health Matters</div>
         <div class="article-content">
             <p>Acne affects over <strong>50 million people annually</strong> in the United States alone, impacting self-confidence, 
-            mental health, and quality of life. Our AI-driven platform empowers you to:</p>
-            <ul>
-                <li>Monitor your skin health proactively with cutting-edge technology</li>
-                <li>Receive scientifically-backed severity assessments using GAGS and IGA scales</li>
-                <li>Get personalized treatment recommendations based on your specific condition</li>
-                <li>Track changes over time to measure treatment effectiveness</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🚀 Powered by YOLOv9 Technology</div>
-        <div class="article-content">
-            <p>Our platform utilizes <strong>YOLOv9</strong>, the latest advancement in real-time object detection:</p>
-            <ul>
-                <li><strong>Lightning-Fast Processing:</strong> Analyze images in milliseconds</li>
-                <li><strong>High Accuracy:</strong> Over 85% precision in acne lesion detection</li>
-                <li><strong>Advanced Feature Extraction:</strong> Identifies subtle variations in skin conditions</li>
-                <li><strong>Clinically Validated:</strong> Trained on thousands of annotated medical images</li>
-            </ul>
+            mental health, and quality of life. A study conducted in 2021 reported that over 50% of individuals with moderate to severe
+            acne vulgaris in Indonesia experienced impaired self-confidence and a decline in quality of life.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
