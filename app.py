@@ -805,9 +805,8 @@ def algo():
     <div class="article-card">
         <div class="article-title">🤖 Model Architecture: YOLOv9</div>
         <div class="article-content">
-            <p>Our system employs <strong>YOLOv9 (You Only Look Once, Version 9)</strong>, representing the pinnacle of 
-            real-time object detection technology. This architecture excels at identifying and localizing acne lesions 
-            with unprecedented speed and accuracy.</p>
+            <p>The system employs <strong>You Only Look Once (Version 9)</strong> for identifying and localizing acne lesions 
+            with realistic speed and accuracy.</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -817,7 +816,7 @@ def algo():
     with col1:
         st.markdown("""
         <div class="metric-container">
-            <div class="metric-value">85%+</div>
+            <div class="metric-value">82%+</div>
             <div class="metric-label">Precision</div>
         </div>
         """, unsafe_allow_html=True)
@@ -825,7 +824,7 @@ def algo():
     with col2:
         st.markdown("""
         <div class="metric-container">
-            <div class="metric-value">80%+</div>
+            <div class="metric-value">80%</div>
             <div class="metric-label">Recall</div>
         </div>
         """, unsafe_allow_html=True)
@@ -844,7 +843,7 @@ def algo():
     <div class="feature-card">
         <h3>🎯 Training Configuration</h3>
         <ul>
-            <li><strong>Environment:</strong> GPU-accelerated computing (CUDA-enabled)</li>
+            <li><strong>Environment:</strong> GPU-accelerated computing</li>
             <li><strong>Dataset Split:</strong> 70% Training, 20% Validation, 10% Testing</li>
             <li><strong>Data Augmentation:</strong> Rotation, flipping, scaling, color jittering</li>
             <li><strong>Optimization:</strong> AdamW optimizer with learning rate scheduling</li>
@@ -875,20 +874,6 @@ def algo():
             st.image(img_path, use_container_width=True)
         else:
             st.warning(f"⚠️ {title} not found at {img_path}")
-    
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🔍 Key Insights</div>
-        <div class="article-content">
-            <ul>
-                <li>The model demonstrates robust performance across diverse skin types and lighting conditions</li>
-                <li>High precision minimizes false positives, ensuring reliable detection results</li>
-                <li>Strong recall ensures most acne lesions are successfully identified</li>
-                <li>Continuous learning pipeline allows for ongoing model improvements</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Prediction page with severity analysis
 def prediction():
@@ -897,7 +882,7 @@ def prediction():
     st.markdown("""
     <div class="feature-card" style="text-align: center;">
         <h3>Upload Your Image for Comprehensive Analysis</h3>
-        <p>Our AI will detect acne lesions, classify severity using GAGS and IGA scales, and provide personalized treatment recommendations.</p>
+        <p>This system will detect acne lesions, classify severity using GAGS and IGA scales, and provide personalized treatment recommendations.</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -964,9 +949,6 @@ def live_detection():
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
-    run = st.checkbox("▶️ Start Webcam")
-    detection_info = st.empty()
 
     img = st.camera_input("📷 Capture image")
 
