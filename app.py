@@ -941,14 +941,16 @@ def live_detection():
         <div class="article-title">📋 Instructions</div>
         <div class="article-content">
             <ul>
-                <li>Ensure your webcam is connected and accessible</li>
-                <li>Position your face 30-40 cm from the camera</li>
+                <li>Ensure your webcam is accessible</li>
+                <li>Keep your face 30-40 cm from the camera</li>
                 <li>Use good lighting (natural light preferred)</li>
                 <li>Keep your face steady for best results</li>
             </ul>
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    detection_info = st.empty()
 
     img = st.camera_input("📷 Capture image")
 
