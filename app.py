@@ -902,7 +902,7 @@ def prediction():
                 return
             
             with st.spinner("🔄 Analyzing image... Please wait..."):
-                pil_img = Image.convert(frame_rgb)
+                
                 annotated_image, classes = predict_image(image)
                 pimple_count = len(classes)
             
