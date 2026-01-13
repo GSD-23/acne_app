@@ -889,7 +889,7 @@ def prediction():
     uploaded_file = st.file_uploader("📁 Choose an image (JPG, PNG, JPEG)", type=["jpg", "png", "jpeg"])
     
     if uploaded_file is not None:
-        image = Image.open(uploaded_file)
+        image = Image.open(uploaded_file).convert("RGB")
         
         col1, col2 = st.columns(2)
         with col1:
@@ -903,7 +903,7 @@ def prediction():
             
             with st.spinner("🔄 Analyzing image... Please wait..."):
                 pil_img = Image.convert(frame_rgb)
-                annotated_image, classes = predict_image(pil_img)
+                annotated_image, classes = predict_image(image)
                 pimple_count = len(classes)
             
             if annotated_image is not None:
