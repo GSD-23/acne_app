@@ -1,0 +1,16 @@
+.DS_Store
+**/.DS_Store
+
+# YOLO / training outputs & data
+working_data/
+BACKEND/detect/
+runs/
+detect/
+BACKEND/Pimples detection.v4i.yolov9/
+
+# Weights
+*.pt
+*.onnx
+
+# SQL dumps (opsional)
+db_railway.sql
