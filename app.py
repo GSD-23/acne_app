@@ -816,7 +816,7 @@ def algo():
     with col1:
         st.markdown("""
         <div class="metric-container">
-            <div class="metric-value">82%+</div>
+            <div class="metric-value">82%</div>
             <div class="metric-label">Precision</div>
         </div>
         """, unsafe_allow_html=True)
