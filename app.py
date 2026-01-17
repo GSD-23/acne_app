@@ -1070,35 +1070,33 @@ def articles():
     """, unsafe_allow_html=True)
     
     # Article 1
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🧴 Building an Effective Skincare Routine for Acne-Prone Skin</div>
-        <div class="article-content">
-            <h4>The Foundation: Cleansing</h4>
-            <p>Proper cleansing is the cornerstone of acne management. Use a <strong>gentle, pH-balanced cleanser</strong> 
-            twice daily (morning and evening). Look for ingredients like:</p>
-            <ul>
-                <li><strong>Salicylic Acid (BHA):</strong> Penetrates pores to dissolve sebum and dead skin cells</li>
-                <li><strong>Glycolic Acid (AHA):</strong> Exfoliates surface skin and promotes cell turnover</li>
-                <li><strong>Tea Tree Oil:</strong> Natural antibacterial properties</li>
-            </ul>
-            
-            <h4>Treatment Phase</h4>
-            <p>After cleansing, apply targeted treatments:</p>
-            <ul>
-                <li><strong>Benzoyl Peroxide (2.5%-10%):</strong> Kills acne-causing bacteria, reduces inflammation</li>
-                <li><strong>Retinoids (Adapalene, Tretinoin):</strong> Prevents clogged pores, promotes skin renewal</li>
-                <li><strong>Niacinamide:</strong> Reduces inflammation, regulates oil production</li>
-            </ul>
-            
-            <h4>Hydration & Protection</h4>
-            <ul>
-                <li><strong>Moisturizer:</strong> Non-comedogenic, oil-free formulas with hyaluronic acid or ceramides</li>
-                <li><strong>Sunscreen:</strong> Broad-spectrum SPF 30+ daily (crucial when using active ingredients)</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    render_article_card(
+        "🧴 Building an Effective Skincare Routine for Acne-Prone Skin",
+        """
+        <h4>The Foundation: Cleansing</h4>
+        <p>Proper cleansing is the cornerstone of acne management. Use a <strong>gentle, pH-balanced cleanser</strong> twice daily.</p>
+        <ul>
+            <li><strong>Salicylic Acid (BHA):</strong> Penetrates pores to dissolve sebum and dead skin cells</li>
+            <li><strong>Glycolic Acid (AHA):</strong> Exfoliates surface skin and promotes cell turnover</li>
+            <li><strong>Tea Tree Oil:</strong> Natural antibacterial properties</li>
+        </ul>
+
+        <h4>Treatment Phase</h4>
+        <p>After cleansing, apply targeted treatments:</p>
+        <ul>
+            <li><strong>Benzoyl Peroxide (2.5%–10%):</strong> Reduces bacteria and inflammation</li>
+            <li><strong>Retinoids (Adapalene, Tretinoin):</strong> Prevents clogged pores and improves texture</li>
+            <li><strong>Niacinamide:</strong> Helps reduce redness and regulate oil</li>
+        </ul>
+
+        <h4>Hydration & Protection</h4>
+        <ul>
+            <li><strong>Moisturizer:</strong> Non-comedogenic, oil-free formulas (hyaluronic acid / ceramides)</li>
+            <li><strong>Sunscreen:</strong> Broad-spectrum SPF 30+ daily (important when using active ingredients)</li>
+        </ul>
+        """,
+        height=560
+    )
     
     # Article 2
     render_article_card(
