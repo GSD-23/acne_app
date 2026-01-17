@@ -991,6 +991,17 @@ def live_detection():
 
     
 # Articles page
+def render_article_card(title: str, body_html: str, height: int = 520):
+    html = f"""
+    {ARTICLE_IFRAME_CSS}
+    <div class="article-card">
+      <div class="article-title">{title}</div>
+      <div class="article-content">
+        {body_html}
+      </div>
+    </div>
+    """
+    components.html(textwrap.dedent(html), height=height, scrolling=True)
     
 def articles():
     st.markdown('<div class="banner"><h1>📚 Skincare & Lifestyle Articles</h1></div>', unsafe_allow_html=True)
@@ -1034,42 +1045,29 @@ def articles():
     """, unsafe_allow_html=True)
     
     # Article 2
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🥗 Lifestyle Factors That Impact Acne</div>
-        <div class="article-content">
-            <h4>Diet & Nutrition</h4>
-            <p>Research shows strong correlations between diet and acne severity:</p>
-            <ul>
-                <li><strong>Foods to Limit:</strong> High-glycemic foods (white bread, sugary snacks), dairy products, processed foods</li>
-                <li><strong>Foods to Embrace:</strong> Omega-3 rich fish, leafy greens, berries, nuts, whole grains</li>
-                <li><strong>Hydration:</strong> Aim for 8-10 glasses of water daily to flush toxins</li>
-            </ul>
-            
-            <h4>Sleep Quality</h4>
-            <p><strong>7-9 hours</strong> of quality sleep is essential for skin repair and hormonal balance. Poor sleep 
-            increases cortisol levels, triggering inflammation and oil production.</p>
-            
-            <h4>Stress Management</h4>
-            <p>Chronic stress elevates cortisol, worsening acne. Effective strategies include:</p>
-            <ul>
-                <li>Meditation and mindfulness (10-15 minutes daily)</li>
-                <li>Regular exercise (30 minutes, 5 times weekly)</li>
-                <li>Yoga or deep breathing exercises</li>
-                <li>Adequate leisure and social connection</li>
-            </ul>
-            
-            <h4>Hygiene Habits</h4>
-            <ul>
-                <li>Clean pillowcases weekly (cotton preferred)</li>
-                <li>Sanitize phone screens daily</li>
-                <li>Avoid touching your face throughout the day</li>
-                <li>Remove makeup before bed (always!)</li>
-                <li>Shower after exercising to remove sweat</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    render_article_card(
+        "🥗 Lifestyle Factors That Impact Acne",
+        """
+        <h4>Diet & Nutrition</h4>
+        <p>Research shows correlations between diet and acne severity:</p>
+        <ul>
+            <li><strong>Foods to Limit:</strong> High-glycemic foods, dairy, processed foods</li>
+            <li><strong>Foods to Embrace:</strong> Omega-3 rich fish, leafy greens, berries</li>
+            <li><strong>Hydration:</strong> Aim for 8–10 glasses of water daily</li>
+        </ul>
+
+        <h4>Sleep Quality</h4>
+        <p><strong>7–9 hours</strong> of sleep supports skin repair and hormonal balance.</p>
+
+        <h4>Stress Management</h4>
+        <ul>
+            <li>Meditation / mindfulness (10–15 minutes daily)</li>
+            <li>Regular exercise</li>
+            <li>Breathing exercises</li>
+        </ul>
+        """,
+        height=560
+        )
     
     # Article 3
     st.markdown("""
