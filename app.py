@@ -991,6 +991,62 @@ def live_detection():
 
     
 # Articles page
+ARTICLE_IFRAME_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  color: #ffffff;
+}
+
+/* Card “bubble” */
+.article-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.10));
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 0;
+  border-left: 5px solid #667eea;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+}
+
+.article-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.article-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.article-content h4 {
+  margin: 18px 0 8px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.article-content p {
+  margin: 8px 0 10px;
+}
+
+.article-content ul {
+  margin: 8px 0 0 22px;
+}
+
+.article-content li {
+  margin: 6px 0;
+}
+</style>
+"""
+
 def render_article_card(title: str, body_html: str, height: int = 520):
     html = f"""
     {ARTICLE_IFRAME_CSS}
