@@ -1103,108 +1103,103 @@ def articles():
         "🥗 Lifestyle Factors That Impact Acne",
         """
         <h4>Diet & Nutrition</h4>
-        <p>Research shows correlations between diet and acne severity:</p>
+        <p>Diet may influence acne severity in some individuals:</p>
         <ul>
-            <li><strong>Foods to Limit:</strong> High-glycemic foods, dairy, processed foods</li>
-            <li><strong>Foods to Embrace:</strong> Omega-3 rich fish, leafy greens, berries</li>
-            <li><strong>Hydration:</strong> Aim for 8–10 glasses of water daily</li>
+            <li><strong>Foods to Limit:</strong> High-glycemic foods, sugary snacks, some dairy products</li>
+            <li><strong>Foods to Embrace:</strong> Omega-3 rich foods, vegetables, fruits, whole grains</li>
+            <li><strong>Hydration:</strong> Maintain adequate water intake daily</li>
         </ul>
 
         <h4>Sleep Quality</h4>
-        <p><strong>7–9 hours</strong> of sleep supports skin repair and hormonal balance.</p>
+        <p><strong>7–9 hours</strong> of quality sleep supports recovery, hormonal balance, and inflammation control.</p>
 
         <h4>Stress Management</h4>
+        <p>Chronic stress may worsen acne in some people. Helpful strategies include:</p>
         <ul>
-            <li>Meditation / mindfulness (10–15 minutes daily)</li>
+            <li>Meditation / mindfulness</li>
             <li>Regular exercise</li>
-            <li>Breathing exercises</li>
+            <li>Deep breathing</li>
+            <li>Social connection and rest</li>
+        </ul>
+
+        <h4>Hygiene Habits</h4>
+        <ul>
+            <li>Wash pillowcases regularly</li>
+            <li>Clean phone screens</li>
+            <li>Avoid touching/picking the face</li>
+            <li>Remove makeup before bed</li>
         </ul>
         """,
-        height=560
-        )
+        height=600
+    )
     
     # Article 3
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">💊 Understanding Acne Treatment Options</div>
-        <div class="article-content">
-            <h4>Over-the-Counter (OTC) Treatments</h4>
-            <p>Suitable for mild to moderate acne:</p>
-            <ul>
-                <li><strong>Benzoyl Peroxide:</strong> Start with 2.5% to minimize irritation</li>
-                <li><strong>Salicylic Acid:</strong> 0.5%-2% concentration for daily use</li>
-                <li><strong>Adapalene (Differin):</strong> OTC retinoid for prevention</li>
-                <li><strong>Sulfur:</strong> Gentle option for sensitive skin</li>
-            </ul>
-            
-            <h4>Prescription Treatments</h4>
-            <p>For moderate to severe acne, dermatologists may prescribe:</p>
-            <ul>
-                <li><strong>Topical Retinoids:</strong> Tretinoin, Tazarotene (more potent than OTC)</li>
-                <li><strong>Topical Antibiotics:</strong> Clindamycin, Erythromycin (often combined with Benzoyl Peroxide)</li>
-                <li><strong>Oral Antibiotics:</strong> Doxycycline, Minocycline (for inflammatory acne)</li>
-                <li><strong>Hormonal Treatments:</strong> Birth control pills, Spironolactone (for women)</li>
-                <li><strong>Isotretinoin (Accutane):</strong> For severe, resistant cystic acne</li>
-            </ul>
-            
-            <h4>Professional Procedures</h4>
-            <ul>
-                <li><strong>Chemical Peels:</strong> Glycolic, salicylic, or TCA peels</li>
-                <li><strong>Laser Therapy:</strong> Targets bacteria and reduces oil production</li>
-                <li><strong>Light Therapy:</strong> Blue/red light kills bacteria and reduces inflammation</li>
-                <li><strong>Microneedling:</strong> Improves scarring and skin texture</li>
-                <li><strong>Extractions:</strong> Professional removal of comedones</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    render_article_card(
+        "💊 Understanding Acne Treatment Options",
+        """
+        <h4>Over-the-Counter (OTC) Treatments</h4>
+        <p>Often used for mild to moderate acne:</p>
+        <ul>
+            <li><strong>Benzoyl Peroxide:</strong> Start low (2.5%) if sensitive</li>
+            <li><strong>Salicylic Acid:</strong> 0.5%–2% for daily use</li>
+            <li><strong>Adapalene:</strong> OTC retinoid for prevention</li>
+            <li><strong>Sulfur:</strong> A gentle option for some skin types</li>
+        </ul>
+
+        <h4>Prescription Treatments</h4>
+        <p>For moderate to severe acne, dermatologists may consider:</p>
+        <ul>
+            <li><strong>Topical Retinoids:</strong> Tretinoin, tazarotene</li>
+            <li><strong>Topical Antibiotics:</strong> Often combined with benzoyl peroxide</li>
+            <li><strong>Oral Antibiotics:</strong> For inflammatory acne (short-term)</li>
+            <li><strong>Hormonal Therapy:</strong> Selected cases (often women)</li>
+            <li><strong>Isotretinoin:</strong> Severe or resistant acne (medical supervision required)</li>
+        </ul>
+
+        <h4>Professional Procedures</h4>
+        <ul>
+            <li>Chemical peels</li>
+            <li>Laser/light therapy</li>
+            <li>Extractions</li>
+            <li>Microneedling (mainly for scarring)</li>
+        </ul>
+        """,
+        height=650
+    )
     
     # Article 4
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">🌿 Natural Remedies and Alternative Approaches</div>
-        <div class="article-content">
-            <h4>Evidence-Based Natural Ingredients</h4>
-            <ul>
-                <li><strong>Tea Tree Oil (5%):</strong> Comparable to Benzoyl Peroxide but gentler</li>
-                <li><strong>Green Tea Extract:</strong> Powerful antioxidant with anti-inflammatory properties</li>
-                <li><strong>Aloe Vera:</strong> Soothes inflammation, promotes healing</li>
-                <li><strong>Honey (especially Manuka):</strong> Antibacterial and wound-healing properties</li>
-                <li><strong>Zinc Supplements:</strong> Reduces inflammation (30-40mg daily)</li>
-            </ul>
-            
-            <h4>Important Considerations</h4>
-            <p>While natural remedies can be beneficial, they should complement, not replace, proven treatments. 
-            Always patch test new ingredients and consult a dermatologist for persistent acne.</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    render_article_card(
+        "🌿 Natural Remedies and Alternative Approaches",
+        """
+        <h4>Commonly Discussed Ingredients</h4>
+        <ul>
+            <li><strong>Tea Tree Oil:</strong> May help some acne cases, but can irritate—patch test first</li>
+            <li><strong>Green Tea Extract:</strong> Antioxidant and anti-inflammatory potential</li>
+            <li><strong>Aloe Vera:</strong> Soothing and calming for irritated skin</li>
+            <li><strong>Zinc:</strong> Some evidence supports benefit in selected cases</li>
+        </ul>
+
+        <h4>Important Notes</h4>
+        <p>Natural options should complement—not replace—evidence-based treatments. If acne persists or worsens, consult a dermatologist.</p>
+        """,
+        height=460
+    )
     
     # Article 5
-    st.markdown("""
-    <div class="article-card">
-        <div class="article-title">❌ Common Acne Myths Debunked</div>
-        <div class="article-content">
-            <h4>Myth vs. Reality</h4>
-            <ul>
-                <li><strong>Myth:</strong> "Acne is caused by dirty skin" 
-                    <br><strong>Reality:</strong> Acne is primarily hormonal and genetic. Over-washing can worsen it.</li>
-                
-                <li><strong>Myth:</strong> "Toothpaste cures pimples" 
-                    <br><strong>Reality:</strong> Toothpaste can irritate skin and cause burns. Use proper spot treatments.</li>
-                
-                <li><strong>Myth:</strong> "Sun exposure clears acne" 
-                    <br><strong>Reality:</strong> UV damage worsens post-inflammatory hyperpigmentation. Always use SPF.</li>
-                
-                <li><strong>Myth:</strong> "Oily skin doesn't need moisturizer" 
-                    <br><strong>Reality:</strong> All skin needs hydration. Skipping moisturizer triggers more oil production.</li>
-                
-                <li><strong>Myth:</strong> "Popping pimples makes them heal faster" 
-                    <br><strong>Reality:</strong> Picking causes scarring, infection, and prolongs healing.</li>
-            </ul>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    render_article_card(
+        "❌ Common Acne Myths Debunked",
+        """
+        <h4>Myth vs. Reality</h4>
+        <ul>
+            <li><strong>Myth:</strong> Acne is caused by dirty skin<br><strong>Reality:</strong> Acne involves hormones, inflammation, and follicles. Over-washing can irritate skin.</li>
+            <li><strong>Myth:</strong> Toothpaste cures pimples<br><strong>Reality:</strong> Toothpaste can burn/irritate skin. Use proper spot treatments.</li>
+            <li><strong>Myth:</strong> Sun exposure clears acne<br><strong>Reality:</strong> UV can worsen marks and damage skin. Use sunscreen daily.</li>
+            <li><strong>Myth:</strong> Oily skin doesn’t need moisturizer<br><strong>Reality:</strong> Hydration matters. Choose non-comedogenic moisturizers.</li>
+            <li><strong>Myth:</strong> Popping pimples makes them heal faster<br><strong>Reality:</strong> Picking increases inflammation and scarring risk.</li>
+        </ul>
+        """,
+        height=600
+    )
     
     st.markdown("""
     <div class="feature-card" style="text-align: center;">
