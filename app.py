@@ -991,6 +991,13 @@ def live_detection():
 
     
 # Articles page
+def render_article_html(html: str, height: int = 520):
+    components.html(
+        textwrap.dedent(html),
+        height=height,
+        scrolling=True
+    )
+    
 def articles():
     st.markdown('<div class="banner"><h1>📚 Skincare & Lifestyle Articles</h1></div>', unsafe_allow_html=True)
     
@@ -1037,7 +1044,7 @@ def articles():
         )
     
     # Article 2
-    st.markdown("""
+    render_article_html("""
     <div class="article-card">
         <div class="article-title">🥗 Lifestyle Factors That Impact Acne</div>
         <div class="article-content">
@@ -1072,7 +1079,7 @@ def articles():
             </ul>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """, height=520)
     
     # Article 3
     st.markdown("""
