@@ -991,12 +991,16 @@ def live_detection():
 
     
 # Articles page
-def render_article_html(html: str, height: int = 520):
-    components.html(
-        textwrap.dedent(html),
-        height=height,
-        scrolling=True
+def render_html_block(html: str):
+    st.markdown(
+        f"""
+        <div class="article-wrapper">
+            {html}
+        </div>
+        """,
+        unsafe_allow_html=True
     )
+    
 def articles():
     st.markdown('<div class="banner"><h1>📚 Skincare & Lifestyle Articles</h1></div>', unsafe_allow_html=True)
     
@@ -1008,8 +1012,7 @@ def articles():
     """, unsafe_allow_html=True)
     
     # Article 1
-    components.html(
-        textwrap.dedent("""\
+    render_html_block("""
     <div class="article-card">
         <div class="article-title">🧴 Building an Effective Skincare Routine for Acne-Prone Skin</div>
         <div class="article-content">
@@ -1037,10 +1040,7 @@ def articles():
             </ul>
         </div>
     </div>
-    """),
-        height=520,
-        scrolling=True,
-        )
+    """)
     
     # Article 2
     st.markdown(textwrap.dedent("""\
