@@ -997,7 +997,6 @@ def render_article_html(html: str, height: int = 520):
         height=height,
         scrolling=True
     )
-    
 def articles():
     st.markdown('<div class="banner"><h1>📚 Skincare & Lifestyle Articles</h1></div>', unsafe_allow_html=True)
     
@@ -1044,7 +1043,7 @@ def articles():
         )
     
     # Article 2
-    render_article_html("""
+    st.markdown(textwrap.dedent("""\
     <div class="article-card">
         <div class="article-title">🥗 Lifestyle Factors That Impact Acne</div>
         <div class="article-content">
@@ -1079,7 +1078,7 @@ def articles():
             </ul>
         </div>
     </div>
-    """, height=520)
+    """, unsafe_allow_html=True)
     
     # Article 3
     st.markdown("""
